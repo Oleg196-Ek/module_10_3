@@ -9,7 +9,7 @@ class Bank:
 
     def deposit(self):
         for i in range(100):
-            value = random.randint(50,500)
+            value = random.randint(50, 500)
             if self.balance >= 500 and self.lock.locked():
                 self.lock.release()
             self.balance += value
@@ -18,7 +18,7 @@ class Bank:
 
     def take(self):
         for i in range(100):
-            value = random.randint(50,500)
+            value = random.randint(50, 500)
             print(f'Запрос на {value}')
             if self.balance >= value:
                 self.balance -= value
@@ -41,7 +41,3 @@ th1.join()
 th2.join()
 
 print(f'Итоговый баланс: {bk.balance}')
-
-
-
-
